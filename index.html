@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Sono:wght@200..800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <title>Today I Learned!</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js"></script>
   </head>
   <body>
     <div class="container">
@@ -14,10 +17,10 @@
           <img src="logo.png" height="68" width="68" alt="Today I learned logo" />
           <h1>Today I Learned</h1>
         </div>
-        <button class="btn btn-large">Share a fact</button>
+        <button class="btn btn-large" id="share-fact-button">Share a fact</button>
       </header>
-      
-      <form class="fact-form" id="fact-form">
+
+      <form class="fact-form" id="fact-form" onsubmit="return false;">
         <input type="text" id="fact-input" placeholder="Share a fact with the world..." />
         <span>200</span>
         <input type="text" id="source-input" placeholder="Trustworthy source..." />
@@ -29,7 +32,7 @@
         </select>
         <button class="btn btn-large" type="submit" id="post-button">Post</button>
       </form>
-    
+
       <main class="main">
         <aside>
           <ul>
@@ -38,38 +41,17 @@
             <li class="category"><button class="btn btn-category" style="background-color: #16a34a">Science</button></li>
           </ul>
         </aside>
-        
+
         <section>
           <ul id="facts-list">
-            <li class="fact">
-              <p>
-                React is being developed by Meta (formerly Facebook)
-                <a class="source" href="https://opensource.fb.com/" target="_blank">(Source)</a>
-              </p>
-              <span class="tag" style="background-color: #3b82f6;">Technology</span>
-              <div class="vote-buttons">
-                <button>👍 24</button>
-                <button>🤯 9</button>
-                <button>❌ 4</button>
-              </div>
-            </li>
-            <li class="fact">
-              <p>
-                Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%
-                <a class="source" href="https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids" target="_blank">(Source)</a>
-              </p>
-              <span class="tag" style="background-color: #eab308;">Society</span>
-              <div class="vote-buttons">
-                <button>👍 11</button>
-                <button>🤯 2</button>
-                <button>❌ 0</button>
-              </div>
-            </li>
+            <!-- Facts will be dynamically added here -->
           </ul>
         </section>
+
+       
       </main>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
