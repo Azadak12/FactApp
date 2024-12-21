@@ -185,3 +185,15 @@ flex-grow: 1;
   margin-right: 18px;
 }
 
+/* Add this to your style.css */
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.delete-btn:hover {
+  background-color: darkred;
+}
